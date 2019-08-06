@@ -1,0 +1,16 @@
+C:\tavisca_training\cart\CartTestProject\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\tavisca_training\cart\CartTestProject\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\tavisca_training\cart\CartTestProject\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\tavisca_training\cart\CartTestProject\bin\Debug\netcoreapp2.1\CartTestProject.deps.json
+C:\tavisca_training\cart\CartTestProject\bin\Debug\netcoreapp2.1\CartTestProject.runtimeconfig.json
+C:\tavisca_training\cart\CartTestProject\bin\Debug\netcoreapp2.1\CartTestProject.runtimeconfig.dev.json
+C:\tavisca_training\cart\CartTestProject\bin\Debug\netcoreapp2.1\CartTestProject.dll
+C:\tavisca_training\cart\CartTestProject\bin\Debug\netcoreapp2.1\CartTestProject.pdb
+C:\tavisca_training\cart\CartTestProject\bin\Debug\netcoreapp2.1\Cart.dll
+C:\tavisca_training\cart\CartTestProject\bin\Debug\netcoreapp2.1\Cart.pdb
+C:\tavisca_training\cart\CartTestProject\obj\Debug\netcoreapp2.1\CartTestProject.csprojResolveAssemblyReference.cache
+C:\tavisca_training\cart\CartTestProject\obj\Debug\netcoreapp2.1\CartTestProject.csproj.CoreCompileInputs.cache
+C:\tavisca_training\cart\CartTestProject\obj\Debug\netcoreapp2.1\CartTestProject.AssemblyInfoInputs.cache
+C:\tavisca_training\cart\CartTestProject\obj\Debug\netcoreapp2.1\CartTestProject.AssemblyInfo.cs
+C:\tavisca_training\cart\CartTestProject\obj\Debug\netcoreapp2.1\CartTestProject.dll
+C:\tavisca_training\cart\CartTestProject\obj\Debug\netcoreapp2.1\CartTestProject.pdb

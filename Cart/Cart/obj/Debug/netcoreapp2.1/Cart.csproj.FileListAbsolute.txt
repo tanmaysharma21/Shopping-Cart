@@ -1,0 +1,11 @@
+C:\tavisca_training\cart\Cart\Cart\bin\Debug\netcoreapp2.1\Cart.deps.json
+C:\tavisca_training\cart\Cart\Cart\bin\Debug\netcoreapp2.1\Cart.runtimeconfig.json
+C:\tavisca_training\cart\Cart\Cart\bin\Debug\netcoreapp2.1\Cart.runtimeconfig.dev.json
+C:\tavisca_training\cart\Cart\Cart\bin\Debug\netcoreapp2.1\Cart.dll
+C:\tavisca_training\cart\Cart\Cart\bin\Debug\netcoreapp2.1\Cart.pdb
+C:\tavisca_training\cart\Cart\Cart\obj\Debug\netcoreapp2.1\Cart.csprojResolveAssemblyReference.cache
+C:\tavisca_training\cart\Cart\Cart\obj\Debug\netcoreapp2.1\Cart.csproj.CoreCompileInputs.cache
+C:\tavisca_training\cart\Cart\Cart\obj\Debug\netcoreapp2.1\Cart.AssemblyInfoInputs.cache
+C:\tavisca_training\cart\Cart\Cart\obj\Debug\netcoreapp2.1\Cart.AssemblyInfo.cs
+C:\tavisca_training\cart\Cart\Cart\obj\Debug\netcoreapp2.1\Cart.dll
+C:\tavisca_training\cart\Cart\Cart\obj\Debug\netcoreapp2.1\Cart.pdb
