@@ -12,13 +12,13 @@ namespace CartTestProject
 
         public CartUnitTest()
         {
-            product1 = new Product("Shirt", 300, 008);
-            product2 = new Product("Pen", 20, 003);
+            product1 = new Product("Shirt", 300, 008, Category.Garment);
+            product2 = new Product("Pen", 20, 003, Category.Education);
             itemManager = new ItemManager();
-            shoppingCart = new ShoppingCart();
+            IDiscount discount = new FixedDiscount();
+            shoppingCart = new ShoppingCart(discount);
             itemManager.AddProduct(shoppingCart.cartItemList, product1, 5);
             itemManager.AddProduct(shoppingCart.cartItemList, product2, 9);
-
         }
 
         [Fact]
@@ -40,9 +40,9 @@ namespace CartTestProject
         }
 
         [Fact]
-        public void GetTotalCost_1680()
+        public void GetTotalCost_1301()
         {
-            Assert.Equal(1680, shoppingCart.GetTotalCost());
+            Assert.Equal(1301, shoppingCart.GetTotalCost());
         }
 
         [Fact]
@@ -52,26 +52,26 @@ namespace CartTestProject
         }
 
         [Fact]
-        public void AddDifferentProduct_GetTotalCost_11680()
+        public void AddDifferentProduct_GetTotalCost_8501()
         {
-            IProduct product = new Product("Refrigerator", 10000, 021);
+            IProduct product = new Product("Refrigerator", 10000, 021, Category.Electronics);
             itemManager.AddProduct(shoppingCart.cartItemList, product, 1);
-            Assert.Equal(11680, shoppingCart.GetTotalCost());
+            Assert.Equal(8501, shoppingCart.GetTotalCost());
         }
 
         [Fact]
         public void AddDifferentProduct_GetCartItemListSize_3()
         {
-            IProduct product = new Product("Refrigerator", 10000, 021);
+            IProduct product = new Product("Refrigerator", 10000, 021, Category.Electronics);
             itemManager.AddProduct(shoppingCart.cartItemList, product, 1);
             Assert.Equal(3, shoppingCart.cartItemList.Count);
         }
 
         [Fact]
-        public void AddSameProduct_GetTotalCost_1700()
+        public void AddSameProduct_GetTotalCost_1318()
         {
             itemManager.AddProduct(shoppingCart.cartItemList, product2, 1);
-            Assert.Equal(1700, shoppingCart.GetTotalCost());
+            Assert.Equal(1318, shoppingCart.GetTotalCost());
         }
 
         [Fact]
@@ -82,17 +82,17 @@ namespace CartTestProject
         }
 
         [Fact]
-        public void DecreaseItemQuantity_GetTotalCost_1640()
+        public void DecreaseItemQuantity_GetTotalCost_1267()
         {
             itemManager.DecreaseProductQuantityInCart(shoppingCart.cartItemList, product2, 2);
-            Assert.Equal(1640, shoppingCart.GetTotalCost());
+            Assert.Equal(1267, shoppingCart.GetTotalCost());
         }
 
         [Fact]
-        public void DecreaseIemQuantityToZero_GetTotalCost_180()
+        public void DecreaseIemQuantityToZero_GetTotalCost_153()
         {
             itemManager.DecreaseProductQuantityInCart(shoppingCart.cartItemList, product1, 5);
-            Assert.Equal(180, shoppingCart.GetTotalCost());
+            Assert.Equal(153, shoppingCart.GetTotalCost());
         }
 
         [Fact]
@@ -105,7 +105,7 @@ namespace CartTestProject
         [Fact]
         public void DecreaseQuantityOfItemWhichIsNotPresentInCart_ThrowsException()
         {
-            IProduct product = new Product("Refrigerator", 10000, 021);
+            IProduct product = new Product("Refrigerator", 10000, 021, Category.Electronics);
             Assert.Throws<ItemNotFoundException>(() => itemManager.DecreaseProductQuantityInCart(shoppingCart.cartItemList, product, 5));
         }
 

@@ -7,6 +7,12 @@ namespace Cart
     public class ShoppingCart
     {
         public readonly List<ICartItem> cartItemList=new List<ICartItem>();
+        public IDiscount discount;
+
+        public ShoppingCart(IDiscount discount)
+        {
+            this.discount = discount;
+        }
 
         public int GetTotalCost()
         {
@@ -16,8 +22,11 @@ namespace Cart
                 cost += cartItem.TotalCost();
             }
 
-            return cost;
+            int discountedCost = cost * (100-discount.DiscountPercentage) / 100;
+
+            return discountedCost;
         }
 
     }
+
 }

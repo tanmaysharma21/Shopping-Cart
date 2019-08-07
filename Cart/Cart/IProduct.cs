@@ -9,5 +9,6 @@ namespace Cart
         string Name { get; set; }
         int Price { get; set; }
         int ProductID { get; set; }
+        Category category { get; set; }
     }
 }
