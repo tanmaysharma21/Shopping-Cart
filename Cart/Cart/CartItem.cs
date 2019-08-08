@@ -18,7 +18,7 @@ namespace Cart
 
         public int TotalCost()
         {
-            return product.Price * Quantity*(100-(int)product.category)/100;
+            return product.Price;
         }
     }
 }

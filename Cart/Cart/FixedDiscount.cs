@@ -6,11 +6,20 @@ namespace Cart
 {
     public class FixedDiscount : IDiscount
     {
-        public FixedDiscount()
+        int discountPercentage=10;
+
+        public void UpdateFixedDiscount(int discountPercentage)
         {
-            DiscountPercentage = 10;
+            if (discountPercentage < 0)
+                throw new LessThan0Exception("Discount percentage must be greater than 0");
+            if (discountPercentage>=100)
+                throw new GreaterThanEqualTo100Exception("Discount percentage must be less than 100");
+            this.discountPercentage = discountPercentage;
         }
 
-        public int DiscountPercentage { get; set; }
+        public int DiscountPercentage (ICartItem cartItem)
+        {
+            return discountPercentage * cartItem.TotalCost()/100;
+        }
     }
 }

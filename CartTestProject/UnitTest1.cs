@@ -9,13 +9,15 @@ namespace CartTestProject
         IProduct product1, product2;
         ItemManager itemManager;
         ShoppingCart shoppingCart;
+        IDiscount discount;
 
         public CartUnitTest()
         {
             product1 = new Product("Shirt", 300, 008, Category.Garment);
             product2 = new Product("Pen", 20, 003, Category.Education);
             itemManager = new ItemManager();
-            IDiscount discount = new FixedDiscount();
+            DiscountFactory discountFactory = new DiscountFactory();
+            discount = discountFactory.GetTypeOfDiscount("Fixed Discount");
             shoppingCart = new ShoppingCart(discount);
             itemManager.AddProduct(shoppingCart.cartItemList, product1, 5);
             itemManager.AddProduct(shoppingCart.cartItemList, product2, 9);
@@ -40,9 +42,9 @@ namespace CartTestProject
         }
 
         [Fact]
-        public void GetTotalCost_1301()
+        public void GetTotalCost_288()
         {
-            Assert.Equal(1301, shoppingCart.GetTotalCost());
+            Assert.Equal(288, shoppingCart.GetTotalCostAfterDiscount());
         }
 
         [Fact]
@@ -52,11 +54,11 @@ namespace CartTestProject
         }
 
         [Fact]
-        public void AddDifferentProduct_GetTotalCost_8501()
+        public void AddDifferentProduct_GetTotalCost_9288()
         {
             IProduct product = new Product("Refrigerator", 10000, 021, Category.Electronics);
             itemManager.AddProduct(shoppingCart.cartItemList, product, 1);
-            Assert.Equal(8501, shoppingCart.GetTotalCost());
+            Assert.Equal(9288, shoppingCart.GetTotalCostAfterDiscount());
         }
 
         [Fact]
@@ -68,10 +70,10 @@ namespace CartTestProject
         }
 
         [Fact]
-        public void AddSameProduct_GetTotalCost_1318()
+        public void AddSameProduct_GetTotalCost_288()
         {
             itemManager.AddProduct(shoppingCart.cartItemList, product2, 1);
-            Assert.Equal(1318, shoppingCart.GetTotalCost());
+            Assert.Equal(288, shoppingCart.GetTotalCostAfterDiscount());
         }
 
         [Fact]
@@ -82,17 +84,17 @@ namespace CartTestProject
         }
 
         [Fact]
-        public void DecreaseItemQuantity_GetTotalCost_1267()
+        public void DecreaseItemQuantity_GetTotalCost_288()
         {
             itemManager.DecreaseProductQuantityInCart(shoppingCart.cartItemList, product2, 2);
-            Assert.Equal(1267, shoppingCart.GetTotalCost());
+            Assert.Equal(288, shoppingCart.GetTotalCostAfterDiscount());
         }
 
         [Fact]
-        public void DecreaseIemQuantityToZero_GetTotalCost_153()
+        public void DecreaseIemQuantityToZero_GetTotalCost_18()
         {
             itemManager.DecreaseProductQuantityInCart(shoppingCart.cartItemList, product1, 5);
-            Assert.Equal(153, shoppingCart.GetTotalCost());
+            Assert.Equal(18, shoppingCart.GetTotalCostAfterDiscount());
         }
 
         [Fact]

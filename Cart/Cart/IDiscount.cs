@@ -6,7 +6,8 @@ namespace Cart
 {
     public interface IDiscount
     {
-        int DiscountPercentage { get; set; }
+        int DiscountPercentage(ICartItem cartItem);
+
 
     }
 }

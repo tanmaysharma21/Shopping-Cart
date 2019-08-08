@@ -14,18 +14,18 @@ namespace Cart
             this.discount = discount;
         }
 
-        public int GetTotalCost()
+        public int GetTotalCostAfterDiscount()
         {
             int cost = 0;
             foreach(ICartItem cartItem in cartItemList)
             {
-                cost += cartItem.TotalCost();
+                cost = cost + cartItem.TotalCost() - discount.DiscountPercentage(cartItem);
             }
 
-            int discountedCost = cost * (100-discount.DiscountPercentage) / 100;
-
-            return discountedCost;
+            return cost;
         }
+
+
 
     }
 
